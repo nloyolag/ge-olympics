@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('upcoming', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+        var data = google.visualization.arrayToDataTable([
+          	['Country', 'Tweets'],
+			['BE', 1],
+			['FR', 4],
+			['DE', 1],
+			['JP', 7],
+			['HK', 1],
+			['BR', 1],
+			['FI', 2],
+			['Ph', 1],
+			['VE', 4],
+			['NC', 1],
+			['TR', 4],
+			['NL', 1],
+			['NG', 3],
+			['TH', 1],
+			['PE', 1],
+			['NP', 2],
+			['PK', 2],
+			['PH', 4],
+			['PL', 1],
+			['BO', 1],
+			['CI', 1],
+			['CH', 3],
+			['CO', 2],
+			['CN', 1],
+			['CL', 1],
+			['CA', 10],
+			['IR', 1],
+			['IT', 5],
+			['ZA', 1],
+			['AR', 1],
+			['AU', 1],
+			['IN', 12],
+			['ES', 3],
+			['CO', 1],
+			['MC', 1],
+			['KE', 4],
+			['US', 140],
+			['KR', 2],
+			['MV', 1],
+			['GB', 19],
+			['SA', 1],
+			['MY', 3],
+			['MX', 2]
+        ]);
+
+        var options = {
+			colorAxis: {colors: ['green'], maxValue: 50},
+		};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
